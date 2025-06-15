@@ -1,10 +1,18 @@
-class Solution:
-    def findLucky(self, arr: List[int]) -> int:
-        result = []
+class Solution(object):
+    def findLucky(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        d = {}
         for num in arr:
-            if num == arr.count(num):
-                result.append(num)
-        if result:
-            return max(result)
-        else:
-            return -1
+            if num in d:
+                d[num] += 1
+            else:
+                d[num] = 1
+        
+        result = []
+        for n in d:
+            if n == d[n]:
+                result.append(n)
+        return max(result) if result  else -1
