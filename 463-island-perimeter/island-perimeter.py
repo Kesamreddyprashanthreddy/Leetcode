@@ -16,7 +16,7 @@ class Solution:
                 for dx,dy in directions:
                     ni,nj = i + dx, j + dy
                     if 0 <= ni < m and 0 <= nj < n and grid[ni][nj] == 1:
-                        if (ni,nj) not in visited and grid[ni][nj] == 1:  
+                        if (ni,nj) not in visited:  
                             visited.add((ni,nj))           
                             q.append((ni,nj))
                     else:
