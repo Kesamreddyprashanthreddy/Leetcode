@@ -5,10 +5,8 @@ class Solution:
 
         reverse_row = []
         for rows in image:
-            rows.reverse()
-            reverse_row.append(rows)
+            reverse_row.append(rows[::-1])
     
-
         for i in range(m):
             for j in range(n):
                 if reverse_row[i][j] == 1:
