@@ -14,7 +14,7 @@ class Solution:
         
         result = self.palindrome(current.next)
 
-        if result == False:
+        if not result:
             return False
         
         res = self.first.val == current.val
