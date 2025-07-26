@@ -1,19 +1,17 @@
 class Solution:
+    
+    def getPermutations(self,nums,idx,ans):
+        if idx == len(nums):
+            ans.append(nums[:])
+            return
+        for i in range(idx,len(nums)):
+            nums[idx],nums[i] = nums[i],nums[idx]
+            self.getPermutations(nums,idx+1,ans)
+            nums[idx],nums[i] = nums[i], nums[idx]
+
+
     def permute(self, nums: List[int]) -> List[List[int]]:
-        result = []
-
-        def backtrack(path, used):
-            if len(path) == len(nums):
-                result.append(path[:])  # Append a copy of path
-                return
-
-            for num in nums:
-                if num not in used:
-                    used.add(num)
-                    path.append(num)
-                    backtrack(path, used)
-                    path.pop()
-                    used.remove(num)
-
-        backtrack([], set())
-        return result
+        ans = []
+        self.getPermutations(nums,0,ans)
+        return ans
+        
