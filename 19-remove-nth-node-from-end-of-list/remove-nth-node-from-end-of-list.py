@@ -14,12 +14,11 @@ class Solution:
         if count == 1:
             return 
         
-
         current = head
         if count == n:
             return head.next
         index = 1
-        while current and  current.next:  
+        while current:  
             if index == count - n:
                 current.next = current.next.next
             index += 1
