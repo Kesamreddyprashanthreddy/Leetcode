@@ -16,7 +16,7 @@ class Solution:
         
         current = head
         if count == n:
-            return head.next
+            return current.next 
         index = 1
         while current:  
             if index == count - n:
