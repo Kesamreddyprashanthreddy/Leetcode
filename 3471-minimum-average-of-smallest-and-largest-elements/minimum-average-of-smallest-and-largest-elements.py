@@ -3,8 +3,7 @@ class Solution:
         min_avg = []
         
         for i in range(len(nums)//2):
-            max_element = max(nums)
-            min_element = min(nums)
+            max_element,min_element = max(nums),min(nums)
             avg = (max_element+min_element) / 2
             min_avg.append(avg)
             nums.remove(max_element)
