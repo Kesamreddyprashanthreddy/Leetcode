@@ -1,13 +1,15 @@
 class Solution:
     def maxFrequencyElements(self, nums: List[int]) -> int:
-        res = {}
-        m = 0
+        dict = {}
         for num in nums:
-            if num in res:
-                res[num] += 1
+            if num in dict:
+                dict[num] += 1
             else:
-                res[num] = 1 
-            m = max(m,res[num])
-        add = sum(v for v in res.values() if v == m)
-        return add
-        
+                dict[num] = 1
+
+        max_freq = max(dict.values())
+        count = 0
+        for num in dict:
+            if dict[num] == max_freq:
+                count += max_freq
+        return count
