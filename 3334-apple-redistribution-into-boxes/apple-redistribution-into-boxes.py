@@ -8,4 +8,6 @@ class Solution:
             if total_apples > total:
                 total += num
                 count += 1
+            else:
+                break
         return count
