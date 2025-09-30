@@ -1,7 +1,8 @@
 class Solution:
     def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
         arr.sort()
-        r = set()
-        for i in range(1,len(arr)):
-            r.add(arr[i-1] - arr[i])
-        return True if len(r) == 1 else False
+        diff = arr[1] - arr[0]
+        for i in range(2,len(arr)):
+            if arr[i] - arr[i-1] != diff:
+                return False
+        return True 
