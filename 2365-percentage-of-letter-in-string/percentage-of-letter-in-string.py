@@ -7,4 +7,4 @@ class Solution:
         for ch in s:
             if ch == letter:
                 count += 1
-        return math.floor(count / n *100)
+        return int(count / n *100)
