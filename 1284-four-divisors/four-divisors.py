@@ -8,6 +8,8 @@ class Solution:
                     d.append(i)
                     if i != num // i:
                         d.append(num // i)
+                if len(d) > 4:
+                    break
             
             if len(d) == 4:
                 s = sum(d)
