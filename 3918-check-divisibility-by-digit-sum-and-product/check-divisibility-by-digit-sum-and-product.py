@@ -1,8 +1,6 @@
 class Solution:
     def checkDivisibility(self, n: int) -> bool:
         num = n
-        if len(str(num)) == 1:
-            return False
         sum_res = 0
         prod_res = 1
         while num > 0:
